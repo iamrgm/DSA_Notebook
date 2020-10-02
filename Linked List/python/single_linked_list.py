@@ -26,12 +26,19 @@ class LinkedList:
             print(temp.value)
             temp = temp.next
             
+    def printrev(self, temp): 
+        if temp: 
+            self.printrev(temp.next) 
+            print(temp.value) 
+        else: 
+            return
+            
     
 if __name__ == "__main__":
     llist = LinkedList()
     while(1):
         print("\nEnter the numbers: ")
-        print("\n1.Insert\t2.Delete\t3.Print\t4.Exit\n")
+        print("\n1.Insert\t2.Delete\t3.Print\t4.Print Reverse\t5.Exit\n")
         i = int(input())
         if i == 1:
             data = int(input())
@@ -41,6 +48,8 @@ if __name__ == "__main__":
         elif i == 3:
             llist.printL()
         elif i == 4:
+            llist.printrev(llist.headnode)
+        elif i == 5:
             break
         else:
             print("\nEnter proper choice!\n")

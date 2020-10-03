@@ -6,3 +6,4 @@
 * search_list: searches the list for a given node, returns index if found else -1
 * print_list: prints the linked list from beginning to end
 * destroy_list: frees all nodes of linked list
+* print_list_reverse: prints linked list in reverse using recursion

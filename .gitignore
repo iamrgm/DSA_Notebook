@@ -4,6 +4,10 @@
 *.docx
 *.pdf
 *.odt
+
+# python cache
+*.pyc
+
 # Object files
 *.o
 *.ko

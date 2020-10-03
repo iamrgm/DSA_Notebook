@@ -16,6 +16,7 @@ void delete_node(list_t*, int);
 int search_list(list_t*, int);
 void print_list(list_t*);
 void destroy_list(list_t*);
+void print_list_reverse(node_t*);
 
 int main(){
     list_t* list = initialize_list();
@@ -23,7 +24,7 @@ int main(){
     int number;
     int flag = 1;
     while(flag){
-        printf("\nAdd a node at the beginning - 1\nDelete a node - 2\nSearch a node - 3\nPrint linked list -4\n");
+        printf("\nAdd a node at the beginning - 1\nDelete a node - 2\nSearch a node - 3\nPrint linked list -4\nPrint linked list in reverse -5\n");
         scanf(" %c",&choice);
         switch(choice){
             case '1':
@@ -45,6 +46,10 @@ int main(){
                 break;
             case '4':
                 print_list(list);
+                break;
+            case '5':
+                print_list_reverse(list->head_);
+                printf("\n");
                 break;
             default:
                 flag = 0;
@@ -141,4 +146,10 @@ void destroy_list(list_t* list){
         free(previous);
         previous = NULL;
     }
+}
+void print_list_reverse(node_t* node){
+    if(node == NULL)
+        return;
+    print_list_reverse(node->next_);
+    printf("%d ",node->n_);
 }
